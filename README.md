@@ -277,7 +277,7 @@ ORDER BY
 ### Recommendations
 
 - Try similar short-term discount campaigns as they're effective for boosting both orders and revenue.
-- Investigate why post-campaign revenue spiked—maybe the campaign built momentum?
+- Dig into why post-campaign numbers spiked. Were those returning buyers, or new ones? The answer points in pretty different directions strategically.
 
 ## Summary
 
