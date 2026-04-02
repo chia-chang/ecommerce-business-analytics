@@ -67,6 +67,7 @@ LIMIT 20;
 - Investigate what the top sellers do well (how do they handle shipping/logistics?) and share those practices.
 - Offer support or coaching to sellers with delivery averages over 6 days.
 - Test if new delivery partnerships or better options would help slow sellers outside big cities.
+- Analyze whether geographic distance is a key driver of delivery speed. If so, expanding warehouse or fulfillment locations could help sellers outside major cities compete.
 
 ## Scenario 2: Late Delivery Analysis
 
