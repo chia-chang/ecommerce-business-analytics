@@ -30,6 +30,9 @@ Which sellers have the fastest average delivery time in the last 3 months?
 - Who are the fastest sellers?
 - What is each seller's average delivery time?
 
+### My read on this
+Fast delivery is a supply-side retention driver, customers who get orders quickly are more likely to reorder. But before optimizing for speed, I want to know why fast sellers are fast. If it's geography (they're closer to customers), the fix is logistics. If it's behavior (how they handle fulfillment), it's coachable. The analysis below sets up that distinction by including city and state alongside delivery time.
+
 ```sql
 SELECT 
     s.seller_id, s.seller_city,  s.seller_state,
@@ -82,6 +85,9 @@ We're getting complaints about late deliveries in São Paulo. Is it a real patte
 - How late are the deliveries?
 
 I've compared São Paulo against other big cities with over 200 orders (using only the last 30 days).
+
+### My read on this
+"A few people being loud" vs "a real pattern" is actually a testable question (we need a baseline to compare against). My instinct here is to compare São Paulo not just against itself over time, but against other high-volume cities. If São Paulo's late rate is within normal range for a city its size, the complaint volume might just reflect its order volume. If it's an outlier, then that's a different conversation.
 
 ```sql
 SELECT 
@@ -138,6 +144,9 @@ Who spent the most money in Q1 2018? What do these top customers have in common?
 - Who are the top 10 spenders?
 - Where are they from?
 
+### My read on this
+Marketing probably wants something targetable (a profile they can build a campaign around). The risk with "top 10 spenders" is that it's too small a sample to be statistically meaningful, and high single-purchase values could just be category effects (someone bought a laptop). I'll answer the question as asked, but flag if the findings don't actually support a targeted campaign.
+
 ```sql
 WITH q1_customer_spending AS (
     SELECT 
@@ -182,6 +191,9 @@ LIMIT 10;
 
 Which cities brought in the most sales in 2017?
 
+### My read on this
+This one is straightforward, but city-level revenue on its own can be misleading since São Paulo will always win just because of population. The more useful question is revenue per capita or growth rate, which tells you where to invest next. I'll deliver the ranking as asked and flag this for follow-up.
+
 ```sql
 SELECT 
     c.customer_city, c.customer_state,
@@ -219,6 +231,9 @@ We ran a discount campaign on electronics July 15-21. Did it work?
 
 - Did revenue and orders increase during the campaign?
 - Did things slow down after?
+
+### My read on this
+"Did it work?" needs a clearer definition before I can answer it. Work for revenue? Orders? Margin? I'll look at all three, but I also want to check for a post-campaign dip since discounts sometimes just pull forward demand rather than create new demand. If post-campaign numbers drop below pre-campaign baseline, that's a red flag worth surfacing even if the campaign week numbers look good.
 
 ### Breaking it down:
 
