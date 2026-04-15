@@ -1,4 +1,4 @@
-# SQL Portfolio: Business Analytics Scenarios
+# Business Analytics Scenarios
 
 ## Overview
 
