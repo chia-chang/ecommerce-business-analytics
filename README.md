@@ -136,7 +136,7 @@ ORDER BY late_pct DESC;
 
 ### Request from Marketing
 
-Who spent the most money in Q1 2018? 
+Who are the top ten spenders in Q1 2018? 
 
 ### What do they want to know?
 
